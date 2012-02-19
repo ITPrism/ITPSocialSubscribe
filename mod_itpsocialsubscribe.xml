@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>ITPSocialSubscribe</name>
+	<author>Todor Iliev</author>
+	<creationDate>Feburary, 2012</creationDate>
+	<copyright>Copyright (C) 2010 Todor Iliev ( ITPrism.com )</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>todor@itprism.com</authorEmail>
+	<authorUrl>http://itprism.com</authorUrl>
+	<version>1.0</version>
+	<description><![CDATA[<p>It is <a href="#">ITPSocialSubscribe</a> displays widgets of your social networks profiles. This will help users of your site to subscribe to your social profiles quickly and easily.</p><p>Invest in the extension improvement and <a href="http://itprism.com/sponsorship" title="Sponsoring" target="_blank">sponsor</a> it via SMS or PayPal.</p><p>Please, <a href="#" target="_blank">vote for this module</a> on Joomla! Extensions Directory!</p>]]></description>
+	<files>
+		<filename module="mod_itpsocialsubscribe">mod_itpsocialsubscribe.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>style.css</filename>
+		<filename>README.md</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+        <fields name="params">
+            <fieldset name="basic">
+            
+                <field name="spacer1" type="spacer" class="text" label="############# FACEBOOK LIKE SETTINGS #############" />
+                <field name="facebookLikeButton" type="radio" default="0" label="Facebook Like" description="Display or not Facebook Like widget" >
+                   <option value="0">Hide</option>
+                   <option value="1">Show</option>
+                </field>
+                <field name="facebookLikePageAddress" type="text" default="http://facebook.com/itprism" size="80" label="Fan Page Address" description="Enter the URL of your Facebook fan page." />
+                <field name="facebookLikeRenderer" type="list" default="2" label="Facebook Like Renderer" description="Choose the renderer of your Facebook Like widget." >
+                   <option value="0">iframe</option>
+                   <option value="1">XFBML</option>
+                   <option value="2">HTML5</option>
+                </field>
+                <field name="facebookLikeAction" type="list" default="like" label="Facebook Button Text" description="The verb to display on the button. Options: 'like', 'recommend' " >
+                   <option value="like">Like</option>
+                   <option value="recommend">Recommend</option>
+                </field>
+                <field name="facebookLikeFaces" type="radio" default="0" label="Facebook Show Faces" description="Show or hide faces of people." >
+                   <option value="0">Hide</option>
+                   <option value="1">Show</option>
+                </field>
+                <field name="facebookLikeColor" type="list" default="light" label="Facebook Like Colour" description="Choose the colour schema of the like widget." >
+                   <option value="light">Light</option>
+                   <option value="dark">Dark</option>
+                </field>
+                <field name="facebookLikeFont" type="list" default="" label="Facebook Like Font" description="The font to display in the button. Options: 'arial', 'lucida grande', 'segoe ui', 'tahoma', 'trebuchet ms', 'verdana' " >
+                   <option value=""></option>
+                    <option value="arial">arial</option>
+                    <option value="lucida grande">lucida grande</option>
+                    <option value="segoe ui">segoe ui</option>
+                    <option value="tahoma">tahoma</option>
+                    <option value="trebuchet ms">trebuchet ms</option>
+                    <option value="verdana">verdana</option>
+                </field>
+                <field name="facebookLikeWidth" type="text" default="350" label="Facebook Like Width" description="Enter the width of your Facebook Like widget." />
+                <field name="fbDynamicLocale" type="radio" default="0" label="Auto language" description="If you set 'Yes' the plugin will take Joomla! locale settings automatically.">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="fbLocale" type="list" default="en_US" label="Language" description="A list with locations and language for the button. Default location - English [en_US].">
+                    <option value="af_ZA">Afrikaans</option>
+                    <option value="ar_AR">Arabic</option>
+                    <option value="ay_BO">Aymara</option>
+                    <option value="az_AZ">Azeri</option>
+                    <option value="be_BY">Belarusian</option>
+                    <option value="bg_BG">Bulgarian</option>
+                    <option value="bn_IN">Bengali</option>
+                    <option value="bs_BA">Bosnian</option>
+                    <option value="ca_ES">Catalan</option>
+                    <option value="ck_US">Cherokee</option>
+                    <option value="cs_CZ">Czech</option>
+                    <option value="cy_GB">Welsh</option>
+                    <option value="da_DK">Danish</option>
+                    <option value="de_DE">German</option>
+                    <option value="el_GR">Greek</option>
+                    <option value="en_GB">English (UK)</option>
+                    <option value="en_PI">English (Pirate)</option>
+                    <option value="en_UD">English (Upside Down)</option>
+                    <option value="en_US">English [US]</option>
+                    <option value="eo_EO">Esperanto</option>
+                    <option value="es_CL">Spanish (Chile)</option>
+                    <option value="es_CO">Spanish (Colombia)</option>
+                    <option value="es_ES">Spanish (Spain)</option>
+                    <option value="es_LA">Spanish</option>
+                    <option value="es_MX">Spanish (Mexico)</option>
+                    <option value="es_VE">Spanish (Mexico)</option>
+                    <option value="et_EE">Estonian</option>
+                    <option value="eu_ES">Basque</option>
+                    <option value="fa_IR">Persian</option>
+                    <option value="fb_LT">Leet Speak</option>
+                    <option value="fi_FI">Finnish</option>
+                    <option value="fo_FO">Faroese</option>
+                    <option value="fr_CA">French (Canada)</option>
+                    <option value="fr_FR">French (France)</option>
+                    <option value="ga_IE">Irish</option>
+                    <option value="gl_ES">Galician</option>
+                    <option value="gn_PY">Guarani</option>
+                    <option value="gu_IN">Gujarati</option>
+                    <option value="he_IL">Hebrew</option>
+                    <option value="hi_IN">Hindi</option>
+                    <option value="hr_HR">Croatian</option>
+                    <option value="hu_HU">Hungarian</option>
+                    <option value="hy_AM">Armenian</option>
+                    <option value="id_ID">Indonesian</option>
+                    <option value="is_IS">Icelandic</option>
+                    <option value="it_IT">Italian</option>
+                    <option value="ja_JP">Japanese</option>
+                    <option value="jv_ID">Javanese</option>
+                    <option value="ka_GE">Georgian</option>
+                    <option value="kk_KZ">Kazakh</option>
+                    <option value="km_KH">Khmer</option>
+                    <option value="kn_IN">Kannada</option>
+                    <option value="ko_KR">Korean</option>
+                    <option value="ku_TR">Kurdish</option>
+                    <option value="la_VA">Latin</option>
+                    <option value="li_NL">Limburgish</option>
+                    <option value="lt_LT">Lithuanian</option>
+                    <option value="lv_LV">Latvian</option>
+                    <option value="mg_MG">Malagasy</option>
+                    <option value="mk_MK">Macedonian</option>
+                    <option value="ml_IN">Malayalam</option>
+                    <option value="mn_MN">Mongolian</option>
+                    <option value="mr_IN">Marathi</option>
+                    <option value="ms_MY">Malay</option>
+                    <option value="mt_MT">Maltese</option>
+                    <option value="nb_NO">Norwegian (bokmal)</option>
+                    <option value="ne_NP">Nepali</option>
+                    <option value="nl_BE">Dutch (Belgie)</option>
+                    <option value="nl_NL">Dutch</option>
+                    <option value="nn_NO">Norwegian (nynorsk)</option>
+                    <option value="pa_IN">Punjabi</option>
+                    <option value="pl_PL">Polish</option>
+                    <option value="ps_AF">Pashto</option>
+                    <option value="pt_BR">Portuguese (Brazil)</option>
+                    <option value="pt_PT">Portuguese (Portugal)</option>
+                    <option value="qu_PE">Quechua</option>
+                    <option value="rm_CH">Romansh</option>
+                    <option value="ro_RO">Romanian</option>
+                    <option value="ru_RU">Russian</option>
+                    <option value="sa_IN">Sanskrit</option>
+                    <option value="se_NO">Northern Sami</option>
+                    <option value="sk_SK">Slovak</option>
+                    <option value="sl_SI">Slovenian</option>
+                    <option value="so_SO">Somali</option>
+                    <option value="sq_AL">Albanian</option>
+                    <option value="sr_RS">Serbian</option>
+                    <option value="sv_SE">Swedish</option>
+                    <option value="sw_KE">Swahili</option>
+                    <option value="sy_SY">Syriac</option>
+                    <option value="ta_IN">Tamil</option>
+                    <option value="te_IN">Telugu</option>
+                    <option value="tg_TJ">Tajik</option>
+                    <option value="th_TH">Thai</option>
+                    <option value="tl_PH">Filipino</option>
+                    <option value="tl_ST">Klingon</option>
+                    <option value="tr_TR">Turkish</option>
+                    <option value="tt_RU">Tatar</option>
+                    <option value="uk_UA">Ukrainian</option>
+                    <option value="ur_PK">Urdu</option>
+                    <option value="uz_UZ">Uzbek</option>
+                    <option value="vi_VN">Vietnamese</option>
+                    <option value="xh_ZA">Xhosa</option>
+                    <option value="yi_DE">Yiddish</option>
+                    <option value="zh_CN">Simplified Chinese (China)</option>
+                    <option value="zh_HK">Traditional Chinese (Hong Kong)</option>
+                    <option value="zh_TW">Traditional Chinese (Taiwan)</option>
+                    <option value="zu_ZA">Zulu</option>
+                </field>
+                
+                <field name="spacer2" type="spacer" class="text" label="############# TWITTER SETTINGS #############" />
+                <field name="twitterButton" type="radio" default="0" label="Twitter Button" description="Show or hide Twitter buttons." >
+                   <option value="0">Hide</option>
+                   <option value="1">Show</option>
+                </field>
+                <field name="twitterName" type="text" default="" size="80" label="Twitter Name" description="Enter the name of your Twitter account." />
+                <field name="twitterSize" type="list" default="large" label="Twitter Button Size" description="Select the button size." >
+                   <option value="small">Small</option>
+                   <option value="large">Large</option>
+                </field>
+                <field name="twitterCounter" type="list" default="1" label="Twitter Counter" description="Show or hide Twitter counter." >
+                   <option value="0">Hide</option>
+                   <option value="1">Show</option>
+                </field>
+                <field name="twitterLanguage" type="list" default="en" label="Twitter Language" description="Choose the language of the Twitter button." >
+                   <option value="nl">Dutch</option>
+                   <option value="en">English</option>
+                   <option value="fr">French</option>
+                   <option value="gr">German</option>
+                   <option value="id">Indonesian</option>
+                   <option value="it">Italian</option>
+                   <option value="jp">Japanese</option>
+                   <option value="ko">Korean</option>
+                   <option value="pt">Portuguese</option>
+                   <option value="ru">Russian</option>
+                   <option value="es">Spanish</option>
+                   <option value="tr">Turkish</option>
+                </field>
+                
+
+                <field name="spacer3" type="spacer" class="text" label="############# Pinterest AND LinkedIn SETTINGS #############" />
+                <field name="pinlinkText" type="text" default="We are also here:" size="80" label="Text" description="Enter the text that will be displayed before icons." />
+                
+                <field name="pinterestButton" type="radio" default="0" label="Pinterest Button" description="Display or not the Pinterest button." >
+                   <option value="0">Hide</option>
+                   <option value="1">Show</option>
+                </field>
+                <field name="pinterestAddress" type="text" default="" size="80" label="Pinterest Address" description="Enter the URL of your Pinterest profile page." />
+                <field name="linkedInButton" type="radio" default="0" label="LinkedIn Button" description="Show or hide LinkedIn button." >
+                   <option value="0">Hide</option>
+                   <option value="1">Show</option>
+                </field>
+                <field name="linkedInAddress" type="text" default="" size="80" label="LinktedIn Today Address" description="Enter the URL of your LinkedIn Today profile page." />
+                
+                <field name="spacer4" type="spacer" class="text" label="############# Follow me on Pinterest SETTINGS #############" />
+                
+                <field name="pinterestFollowButton" type="radio" default="0" label="Pinterest Button" description="Display or not the Follow me on Pinterest button." >
+                   <option value="0">Hide</option>
+                   <option value="1">Show</option>
+                </field>
+                <field name="pinterestFollowAddress" type="text" default="" size="80" label="Pinterest Address" description="Enter the URL of your Pinterest profile page." />
+                
+                <field name="spacer5" type="spacer" class="text" label="############# GOOGLE BADGE SETTINGS #############" />
+                <field name="badgeWidget" type="radio" default="0" label="Display Badge" description="Display or not the badge." >
+                   <option value="0">Hide</option>
+                   <option value="1">Show</option>
+                </field>
+                <field name="badgeAddress" type="text" default="https://plus.google.com/108186699166458022935" size="80" label="Google Page URL" description="Enter the URL address of you Google Plus page." />
+                <field name="badgeRenderer" type="list" default="0" label="Badge Renderer" description="Select the way of rendering." >
+                   <option value="0">HTML5</option>
+                   <option value="1">Standart</option>
+                </field>
+                <field name="badgeType" type="list" default="standart" label="Badge Style" description="Select badge style." >
+                   <option value="69">Small</option>
+                   <option value="131">Standard</option>
+                </field>
+                
+                <field name="badgeTheme" type="list" default="light" label="Badge Theme" description="Select a badge theme." >
+                   <option value="light">Light</option>
+                   <option value="dark">Dark</option>
+                </field>
+                
+                <field name="badgeWidth" type="text" default="300" size="80" label="Badge Width" description="Enter the width of the badge widget." />
+                
+                <field name="badgeLocale" type="list" default="en" label="Badge Language" description="Choose a badge language." >
+                    <option value="ar">Arabic</option>
+                    <option value="bn">Bengali</option>
+                    <option value="bg">Bulgarian</option>
+                    <option value="ca">Catalan</option>
+                    <option value="zh">Chinese</option>
+                    <option value="zh_CN">Chinese (China)</option>
+                    <option value="zh_HK">Chinese (Hong Kong)</option>
+                    <option value="zh_TW">Chinese (Taiwan)</option>
+                    <option value="hr">Croatian</option>
+                    <option value="cs">Czech</option>
+                    <option value="da">Danish</option>
+                    <option value="nl">Dutch</option>
+                    <option value="en">English</option>
+                    <option value="en_IN">English (India)</option>
+                    <option value="en_IE">English (Ireland)</option>
+                    <option value="en_SG">English (Singapore)</option>
+                    <option value="en_ZA">English (South Africa)</option>
+                    <option value="en_GB">English (United Kingdom)</option>
+                    <option value="fil">Filipino</option>
+                    <option value="fi">Finnish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="de_CH">German (Switzerland)</option>
+                    <option value="el">Greek</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="iw">Hebrew</option>
+                    <option value="hi">Hindi</option>
+                    <option value="hu">Hungarian</option>
+                    <option value="in">Indonesian</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="kn">Kannada</option>
+                    <option value="ko">Korean</option>
+                    <option value="lv">Latvian</option>
+                    <option value="ln">Lingala</option>
+                    <option value="lt">Lithuanian</option>
+                    <option value="ms">Malay</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="mr">Marathi</option>
+                    <option value="no">Norwegian</option>
+                    <option value="or">Oriya</option>
+                    <option value="fa">Persian</option>
+                    <option value="pl">Polish</option>
+                    <option value="pt_BR">Portuguese (Brazil)</option>
+                    <option value="pt_PT">Portuguese (Portugal)</option>
+                    <option value="ro">Romanian</option>
+                    <option value="ru">Russian</option>
+                    <option value="sr">Serbian</option>
+                    <option value="sk">Slovak</option>
+                    <option value="sl">Slovenian</option>
+                    <option value="es">Spanish</option>
+                    <option value="sv">Swedish</option>
+                    <option value="gsw">Swiss German</option>
+                    <option value="ta">Tamil</option>
+                    <option value="te">Telugu</option>
+                    <option value="th">Thai</option>
+                    <option value="tr">Turkish</option>
+                    <option value="uk">Ukrainian</option>
+                    <option value="vi">Vietnamese</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field name="moduleclass_sfx" type="text"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field name="owncache" type="list" default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+                    </option>
+                </field>
+
+                <field name="cache_time" type="text" default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                    
+                <field name="spacer6" type="spacer" class="text" label="############# FACEBOOK LIKE ADVANCED SETTINGS #############" />
+                <field name="facebookLikeAppId" type="text" default="" label="Facebook App ID" description="Enter the ID of the your domain name. For more information read the documentation." />
+                <field name="facebookLikeSend" type="list" default="0" label="Facebook Send Buttons" description="Specifies whether to include a 'Send button' with the Like button. This only works with the XFBML version." >
+                   <option value="0">No</option>
+                   <option value="1">Yes</option>
+                </field>
+                <field name="facebookRootDiv" type="radio" default="1" label="Facebook Root Div" description="Put a FB root div element into the page code." >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                 </field>
+                <field name="facebookLoadJsLib" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB" description="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                
+                <field name="spacer7" type="spacer" class="text" label="############# ITPSocialSubscribe SETTINGS #############" />
+                <field name="loadCss" type="radio" default="1" label="Load style.css" description="The style.css is a file that conations button position and some styles of the ReTweetMe button. You can disable the file loading if you have your own styles.">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                
+                <field name="spacer8" type="spacer" class="text" label="############# EXTRA BUTTONS #############" />
+                <field name="ebuttons1" type="textarea" default="" label="A Button code 1" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="ebuttons2" type="textarea" default="" label="A Button code 2" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="ebuttons3" type="textarea" default="" label="A Button code 3" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="ebuttons4" type="textarea" default="" label="A Button code 4" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="ebuttons5" type="textarea" default="" label="A Button code 5" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+            </fieldset>
+        </fields>
+    </config>
+	
+	<languages>
+        <language tag="en-GB">en-GB.mod_itpsocialsubscribe.ini</language>
+        <language tag="en-GB">en-GB.mod_itpsocialsubscribe.sys.ini</language>
+    </languages>    
+</extension>

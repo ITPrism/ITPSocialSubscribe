@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+.itp_social_sidebar {
+	border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    padding: 5px 5px 4px;
+    text-transform: none;
+    width: 100%;
+}
+
+.itp_socialsubscribe_fbl{
+	margin: 5px 0;
+}
+
+.itp_twitter {
+	background: none repeat scroll 0 0 #EEF9FD;
+    clear: both;
+    padding: 4px 5px;
+}
+
+.itp_linkedin_pinterest{
+	background: none repeat scroll 0 0 #E3EEF2;
+    padding: 4px 5px 5px;
+}
+
+.itp_linkedin_pinterest a:link, .itp_linkedin_pinterest a:visited,
+.itp_pinterest a:link, .itp_pinterest a:visited {
+	background: none !important;
+}
