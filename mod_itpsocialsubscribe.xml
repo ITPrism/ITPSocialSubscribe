@@ -2,7 +2,7 @@
 <extension type="module" version="2.5" client="site" method="upgrade">
 	<name>ITPSocialSubscribe</name>
 	<author>Todor Iliev</author>
-	<creationDate>Feburary, 2012</creationDate>
+	<creationDate>February, 2012</creationDate>
 	<copyright>Copyright (C) 2010 Todor Iliev ( ITPrism.com )</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>todor@itprism.com</authorEmail>
