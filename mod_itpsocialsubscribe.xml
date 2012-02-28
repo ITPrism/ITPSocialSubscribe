@@ -8,7 +8,11 @@
 	<authorEmail>todor@itprism.com</authorEmail>
 	<authorUrl>http://itprism.com</authorUrl>
 	<version>1.0</version>
-	<description><![CDATA[<p>It is <a href="#">ITPSocialSubscribe</a> displays widgets of your social networks profiles. This will help users of your site to subscribe to your social profiles quickly and easily.</p><p>Invest in the extension improvement and <a href="http://itprism.com/sponsorship" title="Sponsoring" target="_blank">sponsor</a> it via SMS or PayPal.</p><p>Please, <a href="#" target="_blank">vote for this module</a> on Joomla! Extensions Directory!</p>]]></description>
+	<description><![CDATA[
+    <p>It is <a href="http://itprism.com/free-joomla-extensions/social-profile-subscribe">ITPSocialSubscribe</a> displays widgets of your social networks profiles. This will help users of your site to subscribe to your social profiles quickly and easily.</p>
+    <p>Invest in the extension improvement and <a href="http://itprism.com/sponsorship" title="Sponsoring" target="_blank">sponsor</a> it via SMS or PayPal.</p>
+    <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive information about updates and new ITPrism extensions.</p>
+    <p>Please, <a href="http://extensions.joomla.org/extensions/social-web/social-presence/social-profiles/19870" target="_blank">vote for this module</a> on Joomla! Extensions Directory!</p>]]></description>
 	<files>
 		<filename module="mod_itpsocialsubscribe">mod_itpsocialsubscribe.php</filename>
 		<filename>index.html</filename>
@@ -22,7 +26,7 @@
         <fields name="params">
             <fieldset name="basic">
             
-                <field name="spacer1" type="spacer" class="text" label="############# FACEBOOK LIKE SETTINGS #############" />
+                <field name="spacer1" type="spacer" class="text" label="############# FACEBOOK LIKE settings #############" />
                 <field name="facebookLikeButton" type="radio" default="0" label="Facebook Like" description="Display or not Facebook Like widget" >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
@@ -37,7 +41,7 @@
                    <option value="like">Like</option>
                    <option value="recommend">Recommend</option>
                 </field>
-                <field name="facebookLikeFaces" type="radio" default="0" label="Facebook Show Faces" description="Show or hide faces of people." >
+                <field name="facebookLikeFaces" type="radio" default="1" label="Facebook Show Faces" description="Show or hide faces of people." >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
                 </field>
@@ -169,7 +173,7 @@
                     <option value="zu_ZA">Zulu</option>
                 </field>
                 
-                <field name="spacer2" type="spacer" class="text" label="############# TWITTER SETTINGS #############" />
+                <field name="spacer2" type="spacer" class="text" label="############# TWITTER settings #############" />
                 <field name="twitterButton" type="radio" default="0" label="Twitter Button" description="Show or hide Twitter buttons." >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
@@ -199,13 +203,12 @@
                 </field>
                 
 
-                <field name="spacer3" type="spacer" class="text" label="############# Pinterest AND LinkedIn SETTINGS #############" />
-                <field name="pinlinkText" type="text" default="We are also here:" size="80" label="Text" description="Enter the text that will be displayed before icons." />
-                
+                <field name="spacer3" type="spacer" class="text" label="############# PINTEREST and LINKEDIN settings #############" />
                 <field name="pinterestButton" type="radio" default="0" label="Pinterest Button" description="Display or not the Pinterest button." >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
                 </field>
+                <field name="pinlinkText" type="text" default="We are also here:" size="80" label="Text" description="Enter the text that will be displayed before icons." />
                 <field name="pinterestAddress" type="text" default="" size="80" label="Pinterest Address" description="Enter the URL of your Pinterest profile page." />
                 <field name="linkedInButton" type="radio" default="0" label="LinkedIn Button" description="Show or hide LinkedIn button." >
                    <option value="0">Hide</option>
@@ -213,7 +216,7 @@
                 </field>
                 <field name="linkedInAddress" type="text" default="" size="80" label="LinktedIn Today Address" description="Enter the URL of your LinkedIn Today profile page." />
                 
-                <field name="spacer4" type="spacer" class="text" label="############# Follow me on Pinterest SETTINGS #############" />
+                <field name="spacer4" type="spacer" class="text" label="############# FOLLOW ME on PINTEREST settings #############" />
                 
                 <field name="pinterestFollowButton" type="radio" default="0" label="Pinterest Button" description="Display or not the Follow me on Pinterest button." >
                    <option value="0">Hide</option>
@@ -221,7 +224,7 @@
                 </field>
                 <field name="pinterestFollowAddress" type="text" default="" size="80" label="Pinterest Address" description="Enter the URL of your Pinterest profile page." />
                 
-                <field name="spacer5" type="spacer" class="text" label="############# GOOGLE BADGE SETTINGS #############" />
+                <field name="spacer5" type="spacer" class="text" label="############# GOOGLE BADGE settings #############" />
                 <field name="badgeWidget" type="radio" default="0" label="Display Badge" description="Display or not the badge." >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
@@ -321,7 +324,7 @@
                 <field name="cache_time" type="text" default="900"
                     label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
                     
-                <field name="spacer6" type="spacer" class="text" label="############# FACEBOOK LIKE ADVANCED SETTINGS #############" />
+                <field name="spacer6" type="spacer" class="text" label="############# FACEBOOK LIKE advanced settings #############" />
                 <field name="facebookLikeAppId" type="text" default="" label="Facebook App ID" description="Enter the ID of the your domain name. For more information read the documentation." />
                 <field name="facebookLikeSend" type="list" default="0" label="Facebook Send Buttons" description="Specifies whether to include a 'Send button' with the Like button. This only works with the XFBML version." >
                    <option value="0">No</option>
@@ -336,18 +339,18 @@
                     <option value="1">JYES</option>
                 </field>
                 
-                <field name="spacer7" type="spacer" class="text" label="############# ITPSocialSubscribe SETTINGS #############" />
+                <field name="spacer7" type="spacer" class="text" label="############# ITPSocialSubscribe settings #############" />
                 <field name="loadCss" type="radio" default="1" label="Load style.css" description="The style.css is a file that conations button position and some styles of the ReTweetMe button. You can disable the file loading if you have your own styles.">
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
                 </field>
                 
-                <field name="spacer8" type="spacer" class="text" label="############# EXTRA BUTTONS #############" />
-                <field name="ebuttons1" type="textarea" default="" label="A Button code 1" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
-                <field name="ebuttons2" type="textarea" default="" label="A Button code 2" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
-                <field name="ebuttons3" type="textarea" default="" label="A Button code 3" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
-                <field name="ebuttons4" type="textarea" default="" label="A Button code 4" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
-                <field name="ebuttons5" type="textarea" default="" label="A Button code 5" description="Insert an extra button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="spacer8" type="spacer" class="text" label="############# ADDITIONAL BUTTONS #############" />
+                <field name="ebuttons1" type="textarea" default="" label="Button code 1" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="ebuttons2" type="textarea" default="" label="Button code 2" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="ebuttons3" type="textarea" default="" label="Button code 3" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="ebuttons4" type="textarea" default="" label="Button code 4" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="ebuttons5" type="textarea" default="" label="Button code 5" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
             </fieldset>
         </fields>
     </config>
