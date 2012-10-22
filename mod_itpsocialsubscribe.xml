@@ -240,23 +240,23 @@
                    <option value="0">JHIDE</option>
                    <option value="1">JSHOW</option>
                 </field>
+                <field name="pinlinkText" type="text" default="We are also here:" size="80" label="MOD_ITPSOCIALSUBSCRIBE_TEXT" description="MOD_ITPSOCIALSUBSCRIBE_WE_TEXT_DESC" />
+                <field name="pinterestAddress" type="text" default="http://pinterest.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL_DESC" />
                 <field name="pinterest_small_open_link" type="list" default="_blank" label="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK" description="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK_DESC" >
                    <option value="_blank">MOD_ITPSOCIALSUBSCRIBE_NEW_TAB</option>
                    <option value="_self">MOD_ITPSOCIALSUBSCRIBE_SELF_TAB</option>
                 </field>
-                <field name="pinlinkText" type="text" default="We are also here:" size="80" label="MOD_ITPSOCIALSUBSCRIBE_TEXT" description="MOD_ITPSOCIALSUBSCRIBE_WE_TEXT_DESC" />
-                <field name="pinterestAddress" type="text" default="http://pinterest.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL_DESC" />
                 
                 <field name="spacer5" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_FOLLOW_ME_PINTEREST_DESC" />
                 <field name="pinterestFollowButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON_FOLLOW_DESC" >
                    <option value="0">JHIDE</option>
                    <option value="1">JSHOW</option>
                 </field>
+                <field name="pinterestFollowAddress" type="text" default="http://pinterest.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL_DESC" />
                 <field name="pinterest_large_open_link" type="list" default="_blank" label="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK" description="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK_DESC" >
                    <option value="_blank">MOD_ITPSOCIALSUBSCRIBE_NEW_TAB</option>
                    <option value="_self">MOD_ITPSOCIALSUBSCRIBE_SELF_TAB</option>
                 </field>
-                <field name="pinterestFollowAddress" type="text" default="http://pinterest.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL_DESC" />
                 
                 <field name="spacer6" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_SETTINGS" />
                 <field name="badgeWidget" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE_DESC" >
