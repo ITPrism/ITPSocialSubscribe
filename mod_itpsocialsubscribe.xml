@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="2.5" client="site" method="upgrade">
-	<name>ITPSocialSubscribe</name>
+	<name>MOD_ITPSOCIALSUBSCRIBE</name>
 	<author>Todor Iliev</author>
-	<creationDate>February, 2012</creationDate>
 	<copyright>Copyright (C) 2010 Todor Iliev ( ITPrism.com )</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>todor@itprism.com</authorEmail>
 	<authorUrl>http://itprism.com</authorUrl>
-	<version>1.0</version>
-	<description><![CDATA[
-    <p>It is <a href="http://itprism.com/free-joomla-extensions/social-marketing-seo/networks-profiles-subscription">ITPSocialSubscribe</a> displays widgets of your social networks profiles. This will help users of your site to subscribe to your social profiles quickly and easily.</p>
-    <p>Invest in the extension improvement and <a href="http://itprism.com/sponsorship" title="Sponsoring" target="_blank">sponsor</a> it via SMS or PayPal.</p>
-    <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive information about updates and new ITPrism extensions.</p>
-    <p>Please, <a href="http://extensions.joomla.org/extensions/social-web/social-presence/social-profiles/19870" target="_blank">vote for this module</a> on Joomla! Extensions Directory!</p>]]></description>
+	<version>1.1</version>
+	<creationDate>22 October, 2012</creationDate>
+	<description>MOD_ITPSOCIALSUBSCRIBE_DESC</description>
+	
+	<languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_itpsocialsubscribe.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_itpsocialsubscribe.sys.ini</language>
+    </languages> 
+    
+    <help url="MOD_ITPSOCIALSUBSCRIBE_HELP_URL"/>
+    
 	<files>
 		<filename module="mod_itpsocialsubscribe">mod_itpsocialsubscribe.php</filename>
 		<filename>index.html</filename>
@@ -20,6 +24,7 @@
 		<filename>style.css</filename>
 		<filename>README.md</filename>
 		<folder>tmpl</folder>
+		<folder>images</folder>
 	</files>
 
 	<config>
@@ -27,7 +32,7 @@
             <fieldset name="basic">
             
                 <field name="spacer1" type="spacer" class="text" label="############# FACEBOOK LIKE settings #############" />
-                <field name="facebookLikeButton" type="radio" default="0" label="Facebook Like" description="Display or not Facebook Like widget" >
+                <field name="facebookLikeButton" type="radio" default="1" label="Facebook Like" description="Display or not Facebook Like widget" >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
                 </field>
@@ -59,10 +64,6 @@
                     <option value="verdana">verdana</option>
                 </field>
                 <field name="facebookLikeWidth" type="text" default="350" label="Facebook Like Width" description="Enter the width of your Facebook Like widget." />
-                <field name="fbDynamicLocale" type="radio" default="0" label="Auto language" description="If you set 'Yes' the plugin will take Joomla! locale settings automatically.">
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>
-                </field>
                 <field name="fbLocale" type="list" default="en_US" label="Language" description="A list with locations and language for the button. Default location - English [en_US].">
                     <option value="af_ZA">Afrikaans</option>
                     <option value="ar_AR">Arabic</option>
@@ -174,7 +175,7 @@
                 </field>
                 
                 <field name="spacer2" type="spacer" class="text" label="############# TWITTER settings #############" />
-                <field name="twitterButton" type="radio" default="0" label="Twitter Button" description="Show or hide Twitter buttons." >
+                <field name="twitterButton" type="radio" default="1" label="Twitter Button" description="Show or hide Twitter buttons." >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
                 </field>
@@ -188,44 +189,77 @@
                    <option value="1">Show</option>
                 </field>
                 <field name="twitterLanguage" type="list" default="en" label="Twitter Language" description="Choose the language of the Twitter button." >
-                   <option value="nl">Dutch</option>
-                   <option value="en">English</option>
-                   <option value="fr">French</option>
-                   <option value="gr">German</option>
-                   <option value="id">Indonesian</option>
-                   <option value="it">Italian</option>
-                   <option value="jp">Japanese</option>
-                   <option value="ko">Korean</option>
-                   <option value="pt">Portuguese</option>
-                   <option value="ru">Russian</option>
-                   <option value="es">Spanish</option>
-                   <option value="tr">Turkish</option>
+                   <option value="ar">MOD_ITPSOCIALSUBSCRIBE_ARABIC</option>
+                   <option value="eu">MOD_ITPSOCIALSUBSCRIBE_BASQUE</option>
+                   <option value="ca">MOD_ITPSOCIALSUBSCRIBE_CATALAN</option>
+                   <option value="zh-cn">MOD_ITPSOCIALSUBSCRIBE_CHINESE_ZH</option>
+                   <option value="zh-tw">MOD_ITPSOCIALSUBSCRIBE_CHINESE_TW</option>
+                   <option value="cs">MOD_ITPSOCIALSUBSCRIBE_CZECH</option>
+                   <option value="da">MOD_ITPSOCIALSUBSCRIBE_DANISH</option>
+                   <option value="nl">MOD_ITPSOCIALSUBSCRIBE_DUTCH</option>
+                   <option value="en">MOD_ITPSOCIALSUBSCRIBE_ENGLISH</option>
+                   <option value="fa">MOD_ITPSOCIALSUBSCRIBE_FARSI</option>
+                   <option value="fil">MOD_ITPSOCIALSUBSCRIBE_FILIPINO</option>
+                   <option value="fr">MOD_ITPSOCIALSUBSCRIBE_FRENCH_FR</option>
+                   <option value="fi">MOD_ITPSOCIALSUBSCRIBE_FINNISH</option>
+                   <option value="de">MOD_ITPSOCIALSUBSCRIBE_GERMAN</option>
+                   <option value="el">MOD_ITPSOCIALSUBSCRIBE_GREEK</option>
+                   <option value="hi">MOD_ITPSOCIALSUBSCRIBE_HINDI</option>
+                   <option value="hu">MOD_ITPSOCIALSUBSCRIBE_HUNGARIAN</option>
+                   <option value="it">MOD_ITPSOCIALSUBSCRIBE_ITALIAN</option>
+                   <option value="id">MOD_ITPSOCIALSUBSCRIBE_INDONESIAN</option>
+                   <option value="uk">MOD_ITPSOCIALSUBSCRIBE_UKRAINIAN</option>
+                   <option value="ur">MOD_ITPSOCIALSUBSCRIBE_URDU</option>
+                   <option value="ko">MOD_ITPSOCIALSUBSCRIBE_KOREAN</option>
+                   <option value="msa">MOD_ITPSOCIALSUBSCRIBE_MALAY</option>
+                   <option value="ru">MOD_ITPSOCIALSUBSCRIBE_RUSSIAN</option>
+                   <option value="es">MOD_ITPSOCIALSUBSCRIBE_SPANISH</option>
+                   <option value="sv">MOD_ITPSOCIALSUBSCRIBE_SWEDISH</option>
+                   <option value="no">MOD_ITPSOCIALSUBSCRIBE_NORWEGIAN</option>
+                   <option value="pl">MOD_ITPSOCIALSUBSCRIBE_POLISH</option>
+                   <option value="pt">MOD_ITPSOCIALSUBSCRIBE_PORTUGUESE</option>
+                   <option value="th">MOD_ITPSOCIALSUBSCRIBE_THAI</option>
+                   <option value="tr">MOD_ITPSOCIALSUBSCRIBE_TURKISH</option>
+                   <option value="jp">MOD_ITPSOCIALSUBSCRIBE_JAPANESE</option>
                 </field>
                 
 
-                <field name="spacer3" type="spacer" class="text" label="############# PINTEREST and LINKEDIN settings #############" />
-                <field name="pinterestButton" type="radio" default="0" label="Pinterest Button" description="Display or not the Pinterest button." >
+                <field name="spacer3" type="spacer" class="text" label="############# LINKEDIN TODAY settings #############" />
+                <field name="linkedInButton" type="radio" default="1" label="LinkedIn Button" description="Show or hide LinkedIn button." >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
                 </field>
-                <field name="pinlinkText" type="text" default="We are also here:" size="80" label="Text" description="Enter the text that will be displayed before icons." />
-                <field name="pinterestAddress" type="text" default="" size="80" label="Pinterest Address" description="Enter the URL of your Pinterest profile page." />
-                <field name="linkedInButton" type="radio" default="0" label="LinkedIn Button" description="Show or hide LinkedIn button." >
-                   <option value="0">Hide</option>
-                   <option value="1">Show</option>
+                <field name="linkedin_small_open_link" type="list" default="_blank" label="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK" description="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK_DESC" >
+                   <option value="_blank">MOD_ITPSOCIALSUBSCRIBE_NEW_TAB</option>
+                   <option value="_self">MOD_ITPSOCIALSUBSCRIBE_SELF_TAB</option>
                 </field>
                 <field name="linkedInAddress" type="text" default="" size="80" label="LinktedIn Today Address" description="Enter the URL of your LinkedIn Today profile page." />
                 
-                <field name="spacer4" type="spacer" class="text" label="############# FOLLOW ME on PINTEREST settings #############" />
-                
-                <field name="pinterestFollowButton" type="radio" default="0" label="Pinterest Button" description="Display or not the Follow me on Pinterest button." >
+                <field name="spacer4" type="spacer" class="text" label="############# PINTEREST SMALL settings #############" />
+                <field name="pinterestButton" type="radio" default="1" label="Pinterest Button" description="Display or not the Pinterest button." >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
                 </field>
+                <field name="pinterest_small_open_link" type="list" default="_blank" label="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK" description="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK_DESC" >
+                   <option value="_blank">MOD_ITPSOCIALSUBSCRIBE_NEW_TAB</option>
+                   <option value="_self">MOD_ITPSOCIALSUBSCRIBE_SELF_TAB</option>
+                </field>
+                <field name="pinlinkText" type="text" default="We are also here:" size="80" label="MOD_ITPSOCIALSUBSCRIBE_TEXT" description="MOD_ITPSOCIALSUBSCRIBE_WE_TEXT_DESC" />
+                <field name="pinterestAddress" type="text" default="" size="80" label="Pinterest Address" description="Enter the URL of your Pinterest profile page." />
+                
+                <field name="spacer5" type="spacer" class="text" label="############# FOLLOW ME ON PINTEREST settings #############" />
+                <field name="pinterestFollowButton" type="radio" default="1" label="Pinterest Button" description="Display or not the Follow me on Pinterest button." >
+                   <option value="0">Hide</option>
+                   <option value="1">Show</option>
+                </field>
+                <field name="pinterest_large_open_link" type="list" default="_blank" label="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK" description="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK_DESC" >
+                   <option value="_blank">MOD_ITPSOCIALSUBSCRIBE_NEW_TAB</option>
+                   <option value="_self">MOD_ITPSOCIALSUBSCRIBE_SELF_TAB</option>
+                </field>
                 <field name="pinterestFollowAddress" type="text" default="" size="80" label="Pinterest Address" description="Enter the URL of your Pinterest profile page." />
                 
-                <field name="spacer5" type="spacer" class="text" label="############# GOOGLE BADGE settings #############" />
-                <field name="badgeWidget" type="radio" default="0" label="Display Badge" description="Display or not the badge." >
+                <field name="spacer6" type="spacer" class="text" label="############# GOOGLE BADGE settings #############" />
+                <field name="badgeWidget" type="radio" default="1" label="Display Badge" description="Display or not the badge." >
                    <option value="0">Hide</option>
                    <option value="1">Show</option>
                 </field>
@@ -307,8 +341,89 @@
                     <option value="uk">Ukrainian</option>
                     <option value="vi">Vietnamese</option>
                 </field>
+                
             </fieldset>
 
+			<fieldset name="subscription_icons_settings" label="MOD_ITPSOCIALSUBSCRIBE_SUBSCRIPTION_ICONS_SETTINGS">
+			     <field name="subscription_icons" type="radio" default="1" label="Display Icons" description="Display icons and subscription links." >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="sicons_linkedin" type="radio" default="1" label="Display LinkedIn" description="Display an icon and link to LinkedIn Today profile." >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="sicons_linkedin_address" type="text" default="" size="80" label="LinkedIn Today URL" description="Enter the URL of your LinkedIn Today page." />
+                <field name="sicons_youtube" type="radio" default="1" label="Display YouTube" description="Display an icon and link to YouTube Channel profile." >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="sicons_youtube_address" type="text" default="" size="80" label="YouTube Channel URL" description="Enter the URL of your YouTube Channel page." />
+                <field name="sicons_rss" type="radio" default="1" label="Display RSS" description="Display an icon and link to RSS page" >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="sicons_rss_address" type="text" default="" size="80" label="RSS URL" description="Enter the URL of your RSS page." />
+                
+                <field name="sicons_stumbpleupon" type="radio" default="1" label="Display StumbleUpon" description="Display an icon and link to StumbleUpon page" >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="sicons_stumbpleupon_address" type="text" default="" size="80" label="StumbleUpon URL" description="Enter the URL of your StumbleUpon page." />
+                
+                <field name="sicons_android" type="radio" default="1" label="Display Android" description="Display an icon for Andoird application." >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="sicons_android_address" type="text" default="" size="80" label="Andorid App URL" description="Enter the URL of your Android application page." />
+                
+                <field name="sicons_iphone" type="radio" default="1" label="Display iPhone" description="Display an icon for iPhone application." >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="sicons_iphone_address" type="text" default="" size="80" label="iPhone App URL" description="Enter the URL of your iPhone application page." />
+                
+                <field name="sicons_ipad" type="radio" default="1" label="Display iPad" description="Display an icon for iPad application." >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="sicons_ipad_address" type="text" default="" size="80" label="iPad App URL" description="Enter the URL of your iPad application page." />
+                
+                <field name="sicons_separator" type="radio" default="1" label="Display Separator" description="Display an icon that separate links from mobile icons." >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                
+                <field name="sicons_open_link" type="list" default="_blank" label="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINKS" description="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK_DESC" >
+                   <option value="_blank">MOD_ITPSOCIALSUBSCRIBE_NEW_TAB</option>
+                   <option value="_self">MOD_ITPSOCIALSUBSCRIBE_SELF_TAB</option>
+                </field>
+			</fieldset>
+			
+            <fieldset name="facebook_advanced_settings" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ADVANCED_SETTINGS">
+                <field name="facebookLikeAppId" type="text" default="" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_APP_ID" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_APP_ID_DESC" />
+                <field name="facebookLikeSend" type="list" default="0" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SEND_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SEND_BUTTON" >
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="facebookRootDiv" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ROOT" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ROOT_DESC" >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                 </field>
+                <field name="facebookLoadJsLib" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB" description="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+            
+            <fieldset name="additional_code" label="MOD_ITPSOCIALSUBSCRIBE_ADDITIONAL_BUTTONS">
+                <field name="ebuttons1" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
+                <field name="ebuttons2" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
+                <field name="ebuttons3" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
+                <field name="ebuttons4" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
+                <field name="ebuttons5" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
+            </fieldset>
+             
             <fieldset name="advanced">
                 <field name="moduleclass_sfx" type="text"
                     label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
@@ -324,17 +439,13 @@
                 <field name="cache_time" type="text" default="900"
                     label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
                     
-                <field name="spacer6" type="spacer" class="text" label="############# FACEBOOK LIKE advanced settings #############" />
-                <field name="facebookLikeAppId" type="text" default="" label="Facebook App ID" description="Enter the ID of the your domain name. For more information read the documentation." />
-                <field name="facebookLikeSend" type="list" default="0" label="Facebook Send Buttons" description="Specifies whether to include a 'Send button' with the Like button. This only works with the XFBML version." >
-                   <option value="0">No</option>
-                   <option value="1">Yes</option>
-                </field>
-                <field name="facebookRootDiv" type="radio" default="1" label="Facebook Root Div" description="Put a FB root div element into the page code." >
+                <field name="spacer22" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_TWITTER_ADVANCED_SETTINGS" />
+                <field name="load_twitter_library" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_TWITTER_LOAD_LIBRARY" description="MOD_ITPSOCIALSUBSCRIBE_TWITTER_LOAD_LIBRARY_DESC">
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
-                 </field>
-                <field name="facebookLoadJsLib" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB" description="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB_DESC">
+                </field>
+                <field name="spacer24" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_ADVANCED_SETTINGS" />
+                <field name="loadGoogleJsLib" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_LOAD_JS" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_LOAD_JS_DESC">
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
                 </field>
@@ -344,19 +455,12 @@
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
                 </field>
-                
-                <field name="spacer8" type="spacer" class="text" label="############# ADDITIONAL BUTTONS #############" />
-                <field name="ebuttons1" type="textarea" default="" label="Button code 1" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
-                <field name="ebuttons2" type="textarea" default="" label="Button code 2" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
-                <field name="ebuttons3" type="textarea" default="" label="Button code 3" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
-                <field name="ebuttons4" type="textarea" default="" label="Button code 4" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
-                <field name="ebuttons5" type="textarea" default="" label="Button code 5" description="Insert an additional button ccode that will be included. If you need to specify a URL or title, use {URL} and {TITLE} for that." cols="50" rows="10" filter="raw" />
+                <field name="dynamicLocale" type="radio" default="0" label="MOD_ITPSOCIALSUBSCRIBE_ITPFLOATINGSHARE_AUTO_LANGUAGE" description="MOD_ITPSOCIALSUBSCRIBE_ITPFLOATINGSHARE_AUTO_LANGUAGE_DESC">
+                     <option value="0">JNO</option>
+                     <option value="1">JYES</option>
+                </field>
+                   
             </fieldset>
         </fields>
     </config>
-	
-	<languages>
-        <language tag="en-GB">en-GB.mod_itpsocialsubscribe.ini</language>
-        <language tag="en-GB">en-GB.mod_itpsocialsubscribe.sys.ini</language>
-    </languages>    
 </extension>

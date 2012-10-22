@@ -14,12 +14,10 @@
 // no direct access
 defined('_JEXEC') or die;
 
-// Include the syndicate functions only once
-require_once dirname(__FILE__).'/helper.php';
-
-$moduleClassSfx = htmlspecialchars($params->get('moduleclass_sfx'));
+JLoader::register('ItpSocialSubscribeHelper', dirname(__FILE__).DIRECTORY_SEPARATOR.'helper.php');
 
 $doc = JFactory::getDocument();
+/** $doc JDocumentHTML **/
 
 if($params->get("loadCss")) {
     $doc->addStyleSheet("modules/mod_itpsocialsubscribe/style.css");

@@ -13,15 +13,13 @@
 
 // no direct access
 defined('_JEXEC') or die;?>
-
-<div class="itp_socialsubscribe<?php echo $moduleClassSfx;?>">
-    <?php
-    echo ItpSocialSubscribeHelper::getFacebookLike($params);
-    echo ItpSocialSubscribeHelper::getTwitter($params);
-    echo ItpSocialSubscribeHelper::getLinkedInAndPinterest($params);
-    echo ItpSocialSubscribeHelper::getPinterest($params);
-    echo ItpSocialSubscribeHelper::getGoogleBadge($params);
-    echo ItpSocialSubscribeHelper::getExtraButtons($params);
-    ?>
-</div>
+<?php
+echo ItpSocialSubscribeHelper::getFacebookLike($params);
+echo ItpSocialSubscribeHelper::getTwitter($params);
+echo ItpSocialSubscribeHelper::getLinkedInAndPinterest($params);
+echo ItpSocialSubscribeHelper::getPinterest($params);
+echo ItpSocialSubscribeHelper::getGoogleBadge($params);
+echo ItpSocialSubscribeHelper::getSubscriptionIcons($params);
+echo ItpSocialSubscribeHelper::getExtraButtons($params);
+?>
 <div style="clear:both;"></div>
