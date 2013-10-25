@@ -1,20 +1,18 @@
 <?php
 /**
- * @package      ITPrism Modules
- * @subpackage   ITPSocialSubscribe
+ * @package      ITPSocialSubscribe
+ * @subpackage   Modules
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2010 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * ITPSocialSubscribe is free software. This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
  */
 
 // no direct access
 defined('_JEXEC') or die;
 
 class ItpSocialSubscribeHelper{
+    
+    static $googleScriptLoaded = false;
     
     /**
      * Generate a code for the extra buttons
@@ -39,15 +37,7 @@ class ItpSocialSubscribeHelper{
         $html = "";
         if($params->get("twitterButton")) {
             
-            // Get locale code
-            if(!$params->get("dynamicLocale")) {
-                $locale   = $params->get("twitterLanguage", "en");
-            } else {
-                $tag      = JFactory::getLanguage()->getTag();
-                $locale   = str_replace("-","_", $tag);
-                $locales  = self::getButtonsLocales($locale); 
-                $locale   = JArrayHelper::getValue($locales, "twitter", "en");
-            }
+            $locale = self::getLocale($params->get("dynamicLocale"), "twitter", $params);
             
             $counter = (!$params->get("twitterCounter")) ? "false" : "true";
             
@@ -72,14 +62,7 @@ class ItpSocialSubscribeHelper{
         if($params->get("badgeWidget")) {
             
             // Get locale code
-            if(!$params->get("dynamicLocale")) {
-                $locale   = $params->get("badgeLocale", "en");
-            } else {
-                $tag      = JFactory::getLanguage()->getTag();
-                $locale   = str_replace("-","_", $tag);
-                $locales  = self::getButtonsLocales($locale); 
-                $locale   = JArrayHelper::getValue($locales, "google", "en");
-            }
+            $locale = self::getLocale($params->get("dynamicLocale"), "google", $params);
             
             // Get address
             $url = $params->get("badgeAddress");
@@ -91,19 +74,11 @@ class ItpSocialSubscribeHelper{
             // Load the JavaScript asynchroning
     		if($params->get("loadGoogleJsLib", 1)) {
       
-                $html .= '           
-<script>
-window.___gcfg = {
-    lang: "' . $locale . '",
-    parsetags: "onload"
-};
-
-(function() {
-    var po = document.createElement(\'script\'); po.type = \'text/javascript\'; po.async = true;
-    po.src = \'https://apis.google.com/js/plusone.js\';
-    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>';
+    		    $googleScript = self::getGoogleLoadingScript($locale);
+    		    
+    		    if(!is_null($googleScript)) {
+                    $html .= $googleScript;
+    		    }
     		}
             
             switch($params->get("badgeRenderer")) {
@@ -121,6 +96,76 @@ window.___gcfg = {
         }
         
         return $html;
+    }
+    
+    protected static function getLocale($dynamic, $service, $params) {
+        
+        // Get locale code
+        if(!$params->get("dynamicLocale")) {
+            
+            switch($service) {
+                
+                case "google":
+                    $locale   = $this->params->get("badgeLocale", "en");
+                    break;
+                    
+                case "twitter":
+                    $locale   = $this->params->get("twitterLanguage", "en");
+                    break;
+                    
+                case "facebook":
+                    $locale   = $this->params->get("fbLocale", "en_US");
+                    break;
+                    
+            }
+            
+        } else {
+            
+            $tag      = JFactory::getLanguage()->getTag();
+            $locale   = str_replace("-", "_", $tag);
+            $locales  = self::getButtonsLocales($locale);
+            
+            switch($service) {
+            
+                case "google":
+                case "twitter":
+                    $locale   = JArrayHelper::getValue($locales, $service, "en");
+                    break;
+            
+                case "facebook":
+                    $locale   = JArrayHelper::getValue($locales, $service, "en_US");
+                    break;
+            
+            }
+            
+        }
+        
+        return $locale;
+        
+    }
+    
+    public static function getGoogleLoadingScript($locale) {
+        
+        if(self::$googleScriptLoaded) {
+            return null;
+        }
+        
+        self::$googleScriptLoaded = true;
+        
+        return '
+<script>
+window.___gcfg = {
+    lang: "' . $locale . '",
+    parsetags: "onload"
+};
+        
+(function() {
+    var po = document.createElement(\'script\'); po.type = \'text/javascript\'; po.async = true;
+    po.src = \'https://apis.google.com/js/plusone.js\';
+    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>';
+            
     }
     
     /**
@@ -155,15 +200,7 @@ window.___gcfg = {
             
             $url = $params->get("facebookLikePageAddress");
             
-            // Get locale code
-            if(!$params->get("dynamicLocale")) {
-                $locale   = $params->get("fbLocale", "en_US");
-            } else {
-                $tag      = JFactory::getLanguage()->getTag();
-                $locale   = str_replace("-","_", $tag);
-                $locales  = self::getButtonsLocales($locale); 
-                $locale   = JArrayHelper::getValue($locales, "facebook", "en_US");
-            }
+            $locale = self::getLocale($params->get("dynamicLocale"), "facebook", $params);
             
             $faces = (!$params->get("facebookLikeFaces")) ? "false" : "true";
             
@@ -210,8 +247,10 @@ window.___gcfg = {
         if($params->get("facebookLikeAppId")){
             $html .= "&amp;appId=" . $params->get("facebookLikeAppId");
         }
-        $html .= '" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:' . $params->get("facebookLikeWidth", "450") . 'px; height:80px;" allowTransparency="true"></iframe></div>';
+        $html .= '" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:' . $params->get("facebookLikeWidth", "450") . 'px; height:80px;" allowTransparency="true"></iframe>';
         
+        $html .= '</div>';
+                
         return $html;
     }
     
@@ -342,6 +381,47 @@ window.___gcfg = {
         return $html;
     }
     
+    public static function getYoutube($params){
+    
+        $html = array();
+        if($params->get("youtubeWidget")) {
+    
+            $channelName = JString::trim($params->get("youtubeChannelName"));
+            if(!$channelName) {
+                return "";
+            }
+            
+            $html[] = '<div class="itp_social_sidebar itp-youtube">';
+                    
+            if(0 !== strpos($channelName, "UC")) { // Check for channel ID
+                $channel = 'data-channel="'.htmlspecialchars($channelName, ENT_QUOTES, "UTF-8").'"';
+            } else {
+                $channel = 'data-channelid="'.htmlspecialchars($channelName, ENT_QUOTES, "UTF-8").'"';
+            }
+            
+            $layout = 'data-layout="'.$params->get("youtubeLayout").'"';
+            $theme  = 'data-theme="'.$params->get("youtubeTheme").'"';
+            
+            $html[] = '<div class="g-ytsubscribe" '.$channel.' '.$layout.' '.$theme.'></div>';
+    
+            $html[] = '</div>';
+    
+            
+            // Load the JavaScript asynchroning
+            if($params->get("loadGoogleJsLib", 1)) {
+            
+                $locale = self::getLocale($params->get("dynamicLocale"), "twitter", $params);
+                
+                $googleScript = self::getGoogleLoadingScript($locale);
+            
+                if(!is_null($googleScript)) {
+                    $html[] = $googleScript;
+                }
+            }
+        }
+    
+        return implode("\n", $html);
+    }
 
     public static function getPinterest($params){
         

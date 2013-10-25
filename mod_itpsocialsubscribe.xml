@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5" client="site" method="upgrade">
+<extension type="module" version="3.1" client="site" method="upgrade">
 	<name>MOD_ITPSOCIALSUBSCRIBE</name>
 	<author>Todor Iliev</author>
-	<creationDate>February, 2012</creationDate>
-	<copyright>Copyright (C) 2010 Todor Iliev ( ITPrism.com )</copyright>
+	<copyright>Copyright (C) 2013 Todor Iliev ( ITPrism.com )</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>todor@itprism.com</authorEmail>
 	<authorUrl>http://itprism.com</authorUrl>
-	<version>1.1</version>
-	<description>MOD_ITPSOCIALSUBSCRIBE_DESC</description>
+	<version>1.2</version>
+    <creationDate>25 October, 2013</creationDate>
+	<description><![CDATA[
+    <p>It is <a href="http://itprism.com/free-joomla-extensions/social-marketing-seo/networks-profiles-subscription" target='_blank'>ITPSocialSubscribe</a> displays widgets of your social networks profiles. It will help of the users of your site to subscribe to your social profiles quickly and easily.</p>
+    <p><a href='http://itprism.com/help/83-socialsubscribe-documentation-faq' target='_blank'>Read documentation</a> that will help you to setup the extension.</p>
+    <p>Invest in the extension improvement and <a href="http://itprism.com/sponsorship" target="_blank">sponsor</a> it via SMS, PayPal or Bitcoin.</p>
+    <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive <strong>gifts</strong>, <strong>discount codes</strong>, information about <strong>updates</strong> and information about <strong>new ITPrism extensions</strong>.</p>
+    <p>Please, <a href="http://extensions.joomla.org/extensions/social-web/social-presence/social-profiles/19870" target="_blank">vote for this module</a> on Joomla! Extensions Directory!</p>
+    ]]></description>
 	
 	<languages folder="language">
         <language tag="en-GB">en-GB/en-GB.mod_itpsocialsubscribe.ini</language>
@@ -29,14 +35,14 @@
 
 	<config>
         <fields name="params">
-            <fieldset name="basic">
+                
+            <fieldset name="facebook_options" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SETTINGS">
             
-                <field name="spacer1" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SETTINGS" />
-                <field name="facebookLikeButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_BUTTON_DESC" >
+                <field name="facebookLikeButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_BUTTON_DESC" class="btn-group">
                    <option value="0">JHIDE</option>
                    <option value="1">JSHOW</option>
                 </field>
-                <field name="facebookLikePageAddress" type="text" default="http://facebook.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ADDRESS" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ADDRESS_DESC" />
+                <field name="facebookLikePageAddress" type="text" default="http://facebook.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ADDRESS" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ADDRESS_DESC" class="span3"  />
                 <field name="facebookLikeRenderer" type="list" default="2" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_RENDERER" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_RENDERER_DESC" >
                    <option value="0">iframe</option>
                    <option value="1">XFBML</option>
@@ -46,7 +52,7 @@
                    <option value="like">MOD_ITPSOCIALSUBSCRIBE_LIKE</option>
                    <option value="recommend">MOD_ITPSOCIALSUBSCRIBE_RECOMMEND</option>
                 </field>
-                <field name="facebookLikeFaces" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_FACES" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_FACES_DESC" >
+                <field name="facebookLikeFaces" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_FACES" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_FACES_DESC" class="btn-group">
                    <option value="0">JHIDE</option>
                    <option value="1">JSHOW</option>
                 </field>
@@ -174,8 +180,20 @@
                     <option value="zu_ZA">MOD_ITPSOCIALSUBSCRIBE_ZULU</option>
                 </field>
                 
-                <field name="spacer2" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_TWITTER_SETTINGS" />
-                <field name="twitterButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_TWITTER_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_TWITTER_BUTTON_DESC" >
+                <field name="facebookLikeAppId" type="text" default="" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_APP_ID" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_APP_ID_DESC" />
+                <field name="facebookLikeSend" type="radio" default="0" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SEND_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SEND_BUTTON" class="btn-group">
+                   <option value="0">JNO</option>
+                   <option value="1">JYES</option>
+                </field>
+                <field name="facebookRootDiv" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ROOT" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ROOT_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                 </field>
+                
+            </fieldset>
+            
+            <fieldset name="twitter_options" label="MOD_ITPSOCIALSUBSCRIBE_TWITTER_SETTINGS">
+                <field name="twitterButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_TWITTER_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_TWITTER_BUTTON_DESC" class="btn-group">
                    <option value="0">JHIDE</option>
                    <option value="1">JSHOW</option>
                 </field>
@@ -223,47 +241,51 @@
                    <option value="jp">MOD_ITPSOCIALSUBSCRIBE_JAPANESE</option>
                 </field>
                 
-
-                <field name="spacer3" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_SETTINGS" />
-                <field name="linkedInButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_BUTTON_DESC" >
+            </fieldset>
+            
+            <fieldset name="linkedin_options" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_SETTINGS">
+                <field name="linkedInButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_BUTTON_DESC" class="btn-group">
                    <option value="0">JHIDE</option>
                    <option value="1">JSHOW</option>
                 </field>
-                <field name="linkedInAddress" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_URL" description="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_URL_DESC" />
+                <field name="linkedInAddress" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_URL" description="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_URL_DESC" class="span3" />
                 <field name="linkedin_small_open_link" type="list" default="_blank" label="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK" description="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK_DESC" >
                    <option value="_blank">MOD_ITPSOCIALSUBSCRIBE_NEW_TAB</option>
                    <option value="_self">MOD_ITPSOCIALSUBSCRIBE_SELF_TAB</option>
                 </field>
                 
-                <field name="spacer4" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_SETTINGS" />
-                <field name="pinterestButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON_DESC" >
+            </fieldset>
+            
+            <fieldset name="pinterest_options" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_SETTINGS">
+                <field name="pinterestButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON_DESC" class="btn-group">
                    <option value="0">JHIDE</option>
                    <option value="1">JSHOW</option>
                 </field>
                 <field name="pinlinkText" type="text" default="We are also here:" size="80" label="MOD_ITPSOCIALSUBSCRIBE_TEXT" description="MOD_ITPSOCIALSUBSCRIBE_WE_TEXT_DESC" />
-                <field name="pinterestAddress" type="text" default="http://pinterest.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL_DESC" />
+                <field name="pinterestAddress" type="text" default="http://pinterest.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL_DESC" class="span3" />
                 <field name="pinterest_small_open_link" type="list" default="_blank" label="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK" description="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK_DESC" >
                    <option value="_blank">MOD_ITPSOCIALSUBSCRIBE_NEW_TAB</option>
                    <option value="_self">MOD_ITPSOCIALSUBSCRIBE_SELF_TAB</option>
                 </field>
                 
                 <field name="spacer5" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_FOLLOW_ME_PINTEREST_DESC" />
-                <field name="pinterestFollowButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON_FOLLOW_DESC" >
+                <field name="pinterestFollowButton" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_BUTTON_FOLLOW_DESC" class="btn-group">
                    <option value="0">JHIDE</option>
                    <option value="1">JSHOW</option>
                 </field>
-                <field name="pinterestFollowAddress" type="text" default="http://pinterest.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL_DESC" />
+                <field name="pinterestFollowAddress" type="text" default="http://pinterest.com/itprism" size="80" label="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL" description="MOD_ITPSOCIALSUBSCRIBE_PINTEREST_URL_DESC" class="span3" />
                 <field name="pinterest_large_open_link" type="list" default="_blank" label="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK" description="MOD_ITPSOCIALSUBSCRIBE_OPEN_LINK_DESC" >
                    <option value="_blank">MOD_ITPSOCIALSUBSCRIBE_NEW_TAB</option>
                    <option value="_self">MOD_ITPSOCIALSUBSCRIBE_SELF_TAB</option>
                 </field>
-                
-                <field name="spacer6" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_SETTINGS" />
-                <field name="badgeWidget" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE_DESC" >
+            </fieldset>
+            
+            <fieldset name="google_options" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_SETTINGS">
+                <field name="badgeWidget" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE_DESC" class="btn-group">
                    <option value="0">JHIDE</option>
                    <option value="1">JSHOW</option>
                 </field>
-                <field name="badgeAddress" type="text" default="https://plus.google.com/108186699166458022935" size="80" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_PAGE_URL" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_PAGE_URL_DESC" />
+                <field name="badgeAddress" type="text" default="https://plus.google.com/108186699166458022935" size="80" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_PAGE_URL" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_PAGE_URL_DESC" class="span3" />
                 <field name="badgeRenderer" type="list" default="0" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_RENDER" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_RENDER_DESC" >
                    <option value="0">HTML5</option>
                    <option value="1">MOD_ITPSOCIALSUBSCRIBE_STANDARD</option>
@@ -341,15 +363,33 @@
                     <option value="uk">MOD_ITPSOCIALSUBSCRIBE_UKRAINIAN</option>
                     <option value="vi">MOD_ITPSOCIALSUBSCRIBE_VIETNAMESE</option>
                 </field>
+                
+            </fieldset>
+            
+            <fieldset name="youtube_options" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_SETTINGS">
+                <field name="youtubeWidget" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_BUTTON_DESC" class="btn-group">
+                   <option value="0">JHIDE</option>
+                   <option value="1">JSHOW</option>
+                </field>
+                <field name="youtubeChannelName" type="text" default="GoogleDevelopers" size="80" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_CHANNEL_NAME" description="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_CHANNEL_NAME_DESC" class="span3" />
+                <field name="youtubeLayout" type="list" default="default" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_LAYOUT" description="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_LAYOUT_DESC" >
+                   <option value="default">MOD_ITPSOCIALSUBSCRIBE_DEFAULT</option>
+                   <option value="full">MOD_ITPSOCIALSUBSCRIBE_FULL</option>
+                </field>
+                <field name="youtubeTheme" type="list" default="default" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_THEME" description="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_THEME_DESC" >
+                   <option value="default">MOD_ITPSOCIALSUBSCRIBE_DEFAULT</option>
+                   <option value="dark">MOD_ITPSOCIALSUBSCRIBE_DARK</option>
+                </field>
+                
             </fieldset>
 
 			<fieldset name="subscription_icons_settings" label="MOD_ITPSOCIALSUBSCRIBE_SUBSCRIPTION_ICONS_SETTINGS">
-			     <field name="subscription_icons" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_DISPLAY_ICONS" description="MOD_ITPSOCIALSUBSCRIBE_DISPLAY_ICONS_DESC" >
+			     <field name="subscription_icons" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_DISPLAY_ICONS" description="MOD_ITPSOCIALSUBSCRIBE_DISPLAY_ICONS_DESC" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
                 
-                <field name="sicons_separator" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_DISPLAY_SEPARATOR" description="MOD_ITPSOCIALSUBSCRIBE_DISPLAY_SEPARATOR_DESC" >
+                <field name="sicons_separator" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_DISPLAY_SEPARATOR" description="MOD_ITPSOCIALSUBSCRIBE_DISPLAY_SEPARATOR_DESC" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
@@ -360,100 +400,62 @@
                 </field>
                 
                 <field name="spacer7" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_SPACER" />
-                <field name="sicons_linkedin" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_DISPLAY_ICON_DESC" >
+                <field name="sicons_linkedin" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_DISPLAY_ICON_DESC" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
-                <field name="sicons_linkedin_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_TODAY_URL" description="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_TODAY_URL_DESC" />
+                <field name="sicons_linkedin_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_TODAY_URL" description="MOD_ITPSOCIALSUBSCRIBE_LINKEDIN_TODAY_URL_DESC" class="span3" />
                 
                 <field name="spacer8" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_SPACER" />
-                <field name="sicons_youtube" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_DISPLAY_ICON_DESC" >
+                <field name="sicons_youtube" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_DISPLAY_ICON_DESC" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
-                <field name="sicons_youtube_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_URL" description="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_URL_DESC" />
+                <field name="sicons_youtube_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_URL" description="MOD_ITPSOCIALSUBSCRIBE_YOUTUBE_URL_DESC" class="span3" />
                 
                 <field name="spacer9" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_RSS_SPACER" />
-                <field name="sicons_rss" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_RSS_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_RSS_DISPLAY_ICON_DESC" >
+                <field name="sicons_rss" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_RSS_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_RSS_DISPLAY_ICON_DESC" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
-                <field name="sicons_rss_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_RSS_URL" description="MOD_ITPSOCIALSUBSCRIBE_RSS_URL_DESC" />
+                <field name="sicons_rss_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_RSS_URL" description="MOD_ITPSOCIALSUBSCRIBE_RSS_URL_DESC" class="span3" />
                 
                 <field name="spacer10" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_STUMBLEUPON_SPACER" />
-                <field name="sicons_stumbpleupon" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_STUMBLEUPON_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_STUMBLEUPON_DISPLAY_ICON_DESC" >
+                <field name="sicons_stumbpleupon" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_STUMBLEUPON_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_STUMBLEUPON_DISPLAY_ICON_DESC" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
-                <field name="sicons_stumbpleupon_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_STUMBLEUPON_URL" description="MOD_ITPSOCIALSUBSCRIBE_STUMBLEUPON_URL_DESC" />
+                <field name="sicons_stumbpleupon_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_STUMBLEUPON_URL" description="MOD_ITPSOCIALSUBSCRIBE_STUMBLEUPON_URL_DESC" class="span3" />
                 
                 <field name="spacer11" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_ANDROID_SPACER" />
-                <field name="sicons_android" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_ANDROID_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_ANDROID_DISPLAY_ICON_DESC" >
+                <field name="sicons_android" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_ANDROID_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_ANDROID_DISPLAY_ICON_DESC" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
-                <field name="sicons_android_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_ANDROID_URL" description="MOD_ITPSOCIALSUBSCRIBE_ANDROID_URL_DESC" />
+                <field name="sicons_android_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_ANDROID_URL" description="MOD_ITPSOCIALSUBSCRIBE_ANDROID_URL_DESC" class="span3" />
                 
                 <field name="spacer12" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_IPHONE_SPACER" />
-                <field name="sicons_iphone" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_IPHONE_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_IPHONE_DISPLAY_ICON_DESC" >
+                <field name="sicons_iphone" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_IPHONE_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_IPHONE_DISPLAY_ICON_DESC" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
-                <field name="sicons_iphone_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_IPHONE_URL" description="MOD_ITPSOCIALSUBSCRIBE_IPHONE_URL_DESC" />
+                <field name="sicons_iphone_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_IPHONE_URL" description="MOD_ITPSOCIALSUBSCRIBE_IPHONE_URL_DESC" class="span3" />
                 
                 <field name="spacer13" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_IPAD_SPACER" />
-                <field name="sicons_ipad" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_IPAD_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_IPAD_DISPLAY_ICON_DESC" >
+                <field name="sicons_ipad" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_IPAD_DISPLAY_ICON" description="MOD_ITPSOCIALSUBSCRIBE_IPAD_DISPLAY_ICON_DESC" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
-                <field name="sicons_ipad_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_IPAD_URL" description="MOD_ITPSOCIALSUBSCRIBE_IPAD_URL_DESC" />
+                <field name="sicons_ipad_address" type="text" default="" size="80" label="MOD_ITPSOCIALSUBSCRIBE_IPAD_URL" description="MOD_ITPSOCIALSUBSCRIBE_IPAD_URL_DESC" class="span3" />
                 
 			</fieldset>
 			
-            <fieldset name="additional_code" label="MOD_ITPSOCIALSUBSCRIBE_ADDITIONAL_BUTTONS">
-                <field name="ebuttons1" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
-                <field name="ebuttons2" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
-                <field name="ebuttons3" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
-                <field name="ebuttons4" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
-                <field name="ebuttons5" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" />
-            </fieldset>
-             
-             <fieldset name="implementation_settings" label="MOD_ITPSOCIALSUBSCRIBE_IMPLEMENTATION_OPTIONS">
-                <field name="spacer14" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ADVANCED_SETTINGS" />
-                <field name="facebookLikeAppId" type="text" default="" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_APP_ID" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_APP_ID_DESC" />
-                <field name="facebookLikeSend" type="list" default="0" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SEND_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SEND_BUTTON" >
-                   <option value="0">JNO</option>
-                   <option value="1">JYES</option>
-                </field>
-                <field name="facebookRootDiv" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ROOT" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_ROOT_DESC" >
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                 </field>
-                <field name="facebookLoadJsLib" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB" description="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                
-                <field name="spacer15" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_TWITTER_ADVANCED_SETTINGS" />
-                <field name="load_twitter_library" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_TWITTER_LOAD_LIBRARY" description="MOD_ITPSOCIALSUBSCRIBE_TWITTER_LOAD_LIBRARY_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                <field name="spacer16" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_ADVANCED_SETTINGS" />
-                <field name="loadGoogleJsLib" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_LOAD_JS" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_LOAD_JS_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                
-                <field name="spacer17" type="spacer" class="text" label="MOD_ITPSOCIALSUBSCRIBE_ADVANCED_SETTINGS" />
-                <field name="loadCss" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LOAD_STYLE_CSS" description="MOD_ITPSOCIALSUBSCRIBE_LOAD_STYLE_CSS_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                <field name="dynamicLocale" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_AUTO_LANGUAGE" description="MOD_ITPSOCIALSUBSCRIBE_AUTO_LANGUAGE_DESC">
-                     <option value="0">JNO</option>
-                     <option value="1">JYES</option>
-                </field>
+			<fieldset name="additional_code" label="MOD_ITPSOCIALSUBSCRIBE_ADDITIONAL_BUTTONS">
+                <field name="ebuttons1" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
+                <field name="ebuttons2" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
+                <field name="ebuttons3" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
+                <field name="ebuttons4" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
+                <field name="ebuttons5" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
             </fieldset>
             
             <fieldset name="advanced">
@@ -461,29 +463,36 @@
                     label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
                     description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
 
-                <field
-                    name="cache"
-                    type="list"
-                    default="1"
-                    label="COM_MODULES_FIELD_CACHING_LABEL"
-                    description="COM_MODULES_FIELD_CACHING_DESC">
-                    <option
-                        value="1">JGLOBAL_USE_GLOBAL</option>
-                    <option
-                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                <field name="owncache" type="list" default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+                    </option>
                 </field>
-                <field
-                    name="cache_time"
-                    type="text"
-                    default="900"
-                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
-                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
-                <field
-                    name="cachemode"
-                    type="hidden"
-                    default="static">
-                    <option
-                        value="static"></option>
+
+                <field name="cache_time" type="text" default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                    
+                <field name="loadCss" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LOAD_STYLE_CSS" description="MOD_ITPSOCIALSUBSCRIBE_LOAD_STYLE_CSS_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="dynamicLocale" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_AUTO_LANGUAGE" description="MOD_ITPSOCIALSUBSCRIBE_AUTO_LANGUAGE_DESC" class="btn-group">
+                     <option value="0">JNO</option>
+                     <option value="1">JYES</option>
+                </field>
+                
+                <field name="facebookLoadJsLib" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB" description="MOD_ITPSOCIALSUBSCRIBE_LOAD_JS_LIB_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="load_twitter_library" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_TWITTER_LOAD_LIBRARY" description="MOD_ITPSOCIALSUBSCRIBE_TWITTER_LOAD_LIBRARY_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="loadGoogleJsLib" type="radio" default="1" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_LOAD_JS" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_LOAD_JS_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
                 </field>
             </fieldset>
         </fields>
