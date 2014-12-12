@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.1" client="site" method="upgrade">
+<extension type="module" version="3.3" client="site" method="upgrade">
 	<name>MOD_ITPSOCIALSUBSCRIBE</name>
 	<author>Todor Iliev</author>
-	<copyright>Copyright (C) 2013 Todor Iliev ( ITPrism.com )</copyright>
+	<copyright>Copyright (C) 2014 Todor Iliev ( ITPrism.com )</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>todor@itprism.com</authorEmail>
 	<authorUrl>http://itprism.com</authorUrl>
-	<version>1.2</version>
-    <creationDate>25 October, 2013</creationDate>
+	<version>1.3</version>
+    <creationDate>12 December, 2014</creationDate>
 	<description><![CDATA[
-    <p>It is <a href="http://itprism.com/free-joomla-extensions/social-marketing-seo/networks-profiles-subscription" target='_blank'>ITPSocialSubscribe</a> displays widgets of your social networks profiles. It will help of the users of your site to subscribe to your social profiles quickly and easily.</p>
+    <p><a href="http://itprism.com/free-joomla-extensions/social-marketing-seo/networks-profiles-subscription" target='_blank'>ITPSocialSubscribe</a> displays widgets of your social network profiles. It will help of the users of your site to subscribe to your social profiles quickly and easily.</p>
     <p><a href='http://itprism.com/help/83-socialsubscribe-documentation-faq' target='_blank'>Read documentation</a> that will help you to setup the extension.</p>
     <p>Invest in the extension improvement and <a href="http://itprism.com/sponsorship" target="_blank">sponsor</a> it via SMS, PayPal or Bitcoin.</p>
     <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive <strong>gifts</strong>, <strong>discount codes</strong>, information about <strong>updates</strong> and information about <strong>new ITPrism extensions</strong>.</p>
     <p>Please, <a href="http://extensions.joomla.org/extensions/social-web/social-presence/social-profiles/19870" target="_blank">vote for this module</a> on Joomla! Extensions Directory!</p>
     ]]></description>
 	
-	<languages folder="language">
-        <language tag="en-GB">en-GB/en-GB.mod_itpsocialsubscribe.ini</language>
-        <language tag="en-GB">en-GB/en-GB.mod_itpsocialsubscribe.sys.ini</language>
-    </languages> 
-    
     <help url="MOD_ITPSOCIALSUBSCRIBE_HELP_URL"/>
     
 	<files>
@@ -29,9 +24,11 @@
 		<filename>helper.php</filename>
 		<filename>style.css</filename>
 		<filename>README.md</filename>
-		<folder>tmpl</folder>
-		<folder>images</folder>
-	</files>
+
+        <folder>images</folder>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+    </files>
 
 	<config>
         <fields name="params">
@@ -181,7 +178,7 @@
                 </field>
                 
                 <field name="facebookLikeAppId" type="text" default="" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_APP_ID" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_APP_ID_DESC" />
-                <field name="facebookLikeSend" type="radio" default="0" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SEND_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SEND_BUTTON" class="btn-group">
+                <field name="facebookLikeShare" type="radio" default="0" label="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SHARE_BUTTON" description="MOD_ITPSOCIALSUBSCRIBE_FACEBOOK_SHARE_BUTTON" class="btn-group">
                    <option value="0">JNO</option>
                    <option value="1">JYES</option>
                 </field>
@@ -289,10 +286,6 @@
                 <field name="badgeRenderer" type="list" default="0" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_RENDER" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_RENDER_DESC" >
                    <option value="0">HTML5</option>
                    <option value="1">MOD_ITPSOCIALSUBSCRIBE_STANDARD</option>
-                </field>
-                <field name="badgeType" type="list" default="131" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE_STYLE" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE_STYLE_DESC" >
-                   <option value="69">MOD_ITPSOCIALSUBSCRIBE_SMALL</option>
-                   <option value="131">MOD_ITPSOCIALSUBSCRIBE_STANDARD</option>
                 </field>
                 
                 <field name="badgeTheme" type="list" default="light" label="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE_THEME" description="MOD_ITPSOCIALSUBSCRIBE_GOOGLE_BADGE_THEME_DESC" >
@@ -451,11 +444,11 @@
 			</fieldset>
 			
 			<fieldset name="additional_code" label="MOD_ITPSOCIALSUBSCRIBE_ADDITIONAL_BUTTONS">
-                <field name="ebuttons1" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
-                <field name="ebuttons2" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
-                <field name="ebuttons3" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
-                <field name="ebuttons4" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
-                <field name="ebuttons5" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_BUTTON_CODE_DESC" cols="50" rows="10" filter="raw" class="span6"/>
+                <field name="ebuttons1" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE_DESC" cols="50" rows="10" filter="raw" class="input-xxlarge"/>
+                <field name="ebuttons2" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE_DESC" cols="50" rows="10" filter="raw" class="input-xxlarge"/>
+                <field name="ebuttons3" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE_DESC" cols="50" rows="10" filter="raw" class="input-xxlarge"/>
+                <field name="ebuttons4" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE_DESC" cols="50" rows="10" filter="raw" class="input-xxlarge"/>
+                <field name="ebuttons5" type="textarea" default="" label="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE" description="MOD_ITPSOCIALSUBSCRIBE_CUSTOM_CODE_DESC" cols="50" rows="10" filter="raw" class="input-xxlarge"/>
             </fieldset>
             
             <fieldset name="advanced">
